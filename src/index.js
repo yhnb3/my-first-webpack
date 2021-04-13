@@ -3,7 +3,7 @@ import Image from "./asset/image.jpg"
 
 
 function component(){
-    const $element = document.createElement('div')
+    const $element = document.querySelector(".result")
     $element.innerHTML = 'Hello Webpack!!'
     $element.classList.add('hello')
 
