@@ -10,6 +10,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js?$/,
+        exclude: /(node_modules)/,
+        use: {
+            loader: 'babel-loader',
+        }
+      },
+      {
         test: /\.css$/,
         use: [
           'style-loader',
@@ -27,10 +34,6 @@ module.exports = {
           }
         ]
       },
-      {
-        test: /\.html$/i,
-        loader: 'html-loader',
-      },
     ]
   },
   mode: "development",
@@ -38,6 +41,7 @@ module.exports = {
     contentBase: resolve(__dirname, 'dist'),
     compress: true,
     port: 8080,
+    allowedHosts:["http://127.0.0.1:8000/",],
   },
   plugins: [
     new HtmlWebpackPlugin({
